@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
 })
 
-function App() {
+export function App() {
     return (
         <NavigationContainer>
             <View style={styles.container}>
