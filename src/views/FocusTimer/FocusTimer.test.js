@@ -1,16 +1,14 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { App } from './App'
+import FocusTimer from './FocusTimer'
 
-jest.useFakeTimers()
-
-describe('App component', () => {
+describe('FocusTimer component', () => {
     let wrapper
 
     describe('rendering', () => {
         beforeEach(() => {
-            wrapper = renderer.create(<App />).toJSON()
+            wrapper = renderer.create(<FocusTimer />).toJSON()
         })
 
         it('should render properly', () => {

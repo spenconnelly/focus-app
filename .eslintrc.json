@@ -7,6 +7,11 @@
         "eslint:recommended",
         "plugin:react/recommended"
     ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -33,6 +38,18 @@
         "semi": [
             "error",
             "never"
+        ],
+        "no-unused-vars": [
+            "error",
+            { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
         ]
+    },
+    "globals": {
+        "describe": true,
+        "expect": true,
+        "it": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "jest": true
     }
 }

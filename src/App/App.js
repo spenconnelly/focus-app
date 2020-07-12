@@ -1,23 +1,24 @@
 import React from 'react'
 import { registerRootComponent } from 'expo'
 import { NavigationContainer } from '@react-navigation/native'
-import { StyleSheet, Text, View } from 'react-native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-})
+import FocusTimer from '../views/FocusTimer'
+
+const { Navigator, Screen } = createStackNavigator()
 
 export function App() {
     return (
         <NavigationContainer>
-            <View style={styles.container}>
-                <Text>Time to focus taylor</Text>
-            </View>
+            <Navigator>
+                <Screen
+                    name="Timer"
+                    component={FocusTimer}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+            </Navigator>
         </NavigationContainer>
     )
 }

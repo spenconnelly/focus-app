@@ -14,25 +14,25 @@
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.6.1",
     "@react-navigation/stack": "^5.6.2",
-    "expo": "~38.0.1",
+    "expo": "^38.0.0",
     "expo-status-bar": "^1.0.0",
-    "react": "~16.11.0",
-    "react-dom": "~16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-reanimated": "~1.9.0",
-    "react-native-safe-area-context": "3.0.2",
+    "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0",
+    "babel-preset-expo": "^8.2.3",
     "eslint": "^7.4.0",
     "eslint-plugin-react": "^7.20.3",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
-    "jest-expo": "^38.0.2",
+    "jest-expo": "^38.0.0",
     "react-test-renderer": "^16.13.1"
   },
   "private": true,
@@ -42,5 +42,10 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
   }
 }
