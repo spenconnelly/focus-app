@@ -12,7 +12,7 @@ describe('FocusTimer component', () => {
         })
 
         it('should render properly', () => {
-            expect(wrapper.children.length).toBe(1)
+            expect(wrapper.children.length).toBe(2)
         })
     })
 })
