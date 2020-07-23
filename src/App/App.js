@@ -3,7 +3,7 @@ import { registerRootComponent } from 'expo'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import FocusTimer from '../views/FocusTimer'
+import ChessClock from '../views/ChessClock'
 
 const { Navigator, Screen } = createStackNavigator()
 
@@ -13,7 +13,7 @@ export function App() {
             <Navigator>
                 <Screen
                     name="Timer"
-                    component={FocusTimer}
+                    component={ChessClock}
                     options={{
                         headerShown: false
                     }}

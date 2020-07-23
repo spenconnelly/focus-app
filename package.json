@@ -7,7 +7,6 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "npx eslint --fix \"./src/**/*.{js,jsx}\"",
-    "test": "jest",
     "test-watch": "jest --watch"
   },
   "dependencies": {
@@ -30,9 +29,7 @@
     "babel-preset-expo": "^8.2.3",
     "eslint": "^7.4.0",
     "eslint-plugin-react": "^7.20.3",
-    "husky": "^4.2.5",
-    "jest": "^26.1.0",
-    "jest-expo": "^38.0.0",
+    "prop-types": "^15.7.2",
     "react-test-renderer": "^16.13.1"
   },
   "private": true,
@@ -42,10 +39,5 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run test"
-    }
   }
 }
