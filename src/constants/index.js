@@ -1,6 +1,6 @@
 export const CHESS_TIMES = {
-    bullet: 60,
-    blitz: 180,
-    rapid: 600,
-    classical: 1800
+    bullet: 60000,
+    blitz: 180000,
+    rapid: 600000,
+    classical: 1800000
 }

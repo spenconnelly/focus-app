@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-    Text,
     View,
     StyleSheet
 } from 'react-native'
+
+import TimeDisplay from '../TimeDisplay'
 
 PlayerSetup.propTypes = {
     color: PropTypes.oneOf(['black', 'white']),
@@ -16,22 +17,23 @@ const styles = StyleSheet.create({
     blackPlayerTextModifier: {
         color: 'white'
     },
-    whitePlayerTextModifier: {
-
-    }
+    whitePlayerTextModifier: {}
 })
 
 function PlayerSetup(props) {
     const {
         color = 'white',
-        time // in minutes
+        time // in milliseconds
     } = props
 
     const colorStyle = color === 'black' ? styles.blackPlayerTextModifier : styles.whitePlayerTextModifier
 
     return (
         <View>
-            <Text style={colorStyle}>{ time }</Text>
+            <TimeDisplay
+                style={colorStyle}
+                time={time}
+            />
         </View>
     )
 }
