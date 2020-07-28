@@ -5,33 +5,19 @@ import {
 } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 
-import PlayerSetup from '../../components/PlayerSetup'
+import { CHESS_TIMES } from '../../constants'
+import GameSetup from '../../components/GameSetup/GameSetup'
 
 const styles = StyleSheet.create({
     root: {
         flex: 1
-    },
-    blackContainer: {
-        backgroundColor: 'black',
-        minHeight: '50%',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    whiteContainer: {
-        backgroundColor: 'white',
-        minHeight: '50%',
-        alignItems: 'center',
-        justifyContent: 'center'
     }
 })
 
 function ChessClock() {
     const [isPlaying] = useState(false)
-    const [blackTime, setBlackTime] = useState(0)
-    const [whiteTime, setWhiteTime] = useState(0)
-
-    const handleBlackTimeChange = time => setBlackTime(time)
-    const handleWhiteTimeChange = time => setWhiteTime(time)
+    const [blackTime, setBlackTime] = useState(CHESS_TIMES.classical)
+    const [whiteTime, setWhiteTime] = useState(CHESS_TIMES.classical)
 
     return (
         <View style={styles.root}>
@@ -41,27 +27,14 @@ function ChessClock() {
                 hideTransitionAnimation="slide"
                 hidden={isPlaying}
             />
-            <View style={styles.blackContainer}>
-                { !isPlaying ? (
-                    <PlayerSetup
-                        color="black"
-                        time={blackTime}
-                        onChange={handleBlackTimeChange}
-                    />
-                ) : (
-                    <View />
-                )}
-            </View>
-            <View style={styles.whiteContainer}>
-                { !isPlaying ? (
-                    <PlayerSetup
-                        time={whiteTime}
-                        onChange={handleWhiteTimeChange}
-                    />
-                ) : (
-                    <View />
-                )}
-            </View>
+            { !isPlaying && (
+                <GameSetup
+                    blackTime={blackTime}
+                    whiteTime={whiteTime}
+                    setBlackTime={setBlackTime}
+                    setWhiteTime={setWhiteTime}
+                />
+            )}
         </View>
     )
 }

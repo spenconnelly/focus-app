@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 function PlayerSetup(props) {
     const {
         color = 'white',
-        time // in ms
+        time // in minutes
     } = props
 
     const colorStyle = color === 'black' ? styles.blackPlayerTextModifier : styles.whitePlayerTextModifier
